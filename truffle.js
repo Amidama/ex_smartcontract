@@ -1,10 +1,14 @@
+const config = require("./config/default.json");
+const ip = config.deploy.ip_address;
+const account = config.deploy.account;
+
 module.exports = {
   networks: {
     development: {
-        host: "127.0.0.1",
+        host: ip,
         port: 8545,
         network_id: "*", // match any network
-        from: "0x50f5e412993b822acfedfe807dd1abaf334627da",
+        from: account,
         gas: 400000
     }
   }

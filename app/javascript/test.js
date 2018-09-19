@@ -1,21 +1,23 @@
 const Web3 = require('web3');
 
-var contract = require('truffle-contract');
+const contract = require('truffle-contract');
 
-var express = require("express");
+const express = require("express");
 
-var app = express();
-var port = process.env.PORT || 8081;
+const config = require("../../config/default.json");
 
-const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+const app = express();
+const port = process.env.PORT || 8081;
+
+const web3 = new Web3(new Web3.providers.HttpProvider(config.web3.ip_address));
 
 const testing_artifacts = require('../../build/contracts/Test.json')
-
-var Testing = contract(testing_artifacts);
+const Testing = contract(testing_artifacts);
 Testing.setProvider(web3.currentProvider)
 
-app.get('/', (req, res) => {
-	res.send('Welcome to Blockchain World Powered by OneSpace Developer');
+app.get('/', async (req, res) => {
+	let account_m = await web3.eth.getCoinbase();
+	res.send('Welcome to Blockchain World Powered by OneSpace Developer <br> account : '+account_m);
 })
 
 app.get('/set', async (req, res) => {

@@ -4,6 +4,7 @@
   "description": "",
   "main": "truffle-config.js",
   "dependencies": {
+    "config": "^2.0.1",
     "express": "^4.16.3",
     "init": "^0.1.2",
     "truffle-contract": "^3.0.6",

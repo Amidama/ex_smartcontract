@@ -1,0 +1,22 @@
+{
+  "name": "etherapienter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "init": "^0.1.2",
+    "truffle-contract": "^3.0.6",
+    "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amidama/ex_smartcontract.git"
+  },
+  "author": "Oat",
+  "license": "OneSpace-Corporation"
+}
